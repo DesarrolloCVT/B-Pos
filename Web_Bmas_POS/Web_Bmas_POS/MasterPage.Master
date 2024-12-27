@@ -1,0 +1,162 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="Web_Bmas_POS.MasterPage" %>
+<%@ Register Src="~/ControlesSMM/MenuSMM.ascx" TagName="MenuSMM" TagPrefix="uc1" %>
+<%@ Register Assembly="DevExpress.Web.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
+
+<!DOCTYPE html>
+<html5 lang="es">
+<html>
+<head id="Head1" runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>B+ Pos</title>
+        <link rel="shortcut icon" href="Images/favicon.ico" />
+        <link rel="icon" href="Images/favicon.ico" />
+
+        <script language="javascript" type="text/javascript">
+            function ControldeEnter() {
+                if ((window.event.keyCode == 13) || (window.event.keyCode == 8)) {
+                    window.event.keyCode = 0;
+                    window.event.cancelBubble = true;
+                    window.event.cancel = true;
+                    window.event.returnValue = false;
+                    return false;
+                }
+                else {
+                    window.event.cancelBubble = false;
+                    window.event.returnValue = true;
+                    window.event.calcel = false;
+                    return true;
+                }
+                if ((window.event.keyCode == 116) || (window.event.keyCode == 122)) {
+                    if (navigator.appName == "Microsoft Internet Explorer") {
+                        window.event.keyCode = 0;
+                    }
+                    return false;
+                }
+                if (window.event.ctrlKey) {
+                    if (window.event.keyCode == 8) {
+                        window.event.keyCode = 0;
+                        window.event.cancelBubble = true;
+                        window.event.cancel = true;
+                        window.event.returnValue = false;
+                    }
+                }
+                function HidePanel() {
+                    cmbSitePopMaster.Hide();
+                }
+                function ShowPop() {
+                    cmbSitePopMaster.Show();
+                }
+            }
+        </script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+       <style type="text/css">
+            .auto-style3 {
+                width: 81px;
+            }
+
+            .auto-style4 {
+                width: 150px;
+            }
+        </style>
+</head>
+<body id="body" style="width: 100%; height: 100%;" onkeypress="ControldeEnter()">
+     <form id="frmMaster" runat="server">
+            <dx:ASPxPanel ID="ASPxPanel1" runat="server" Width="200px">
+                <SettingsCollapsing ExpandOnPageLoad="True">
+                </SettingsCollapsing>
+                <PanelCollection>
+                    <dx:PanelContent runat="server">
+                        <div id="siteWrapper">
+                            <div id="header">
+                                <img src="../Images/LOGOTIPO B MAS_png.png" alt="" title="" class="logo" width="80px" height="60px" />
+                                <div id="usrData">
+                                    <%--     <p>
+                        Bienvenido 
+                    <a>
+                        <dx:ASPxButton ID="lblUser" runat="server" Text="" OnClick="lblUser_Click" 
+                            RenderMode="Link" style="width: 4px">
+                        </dx:ASPxButton>
+                    </a></p>
+                    
+                        <asp:ImageButton ID="cmdCerrarS" runat="server" ToolTip="Cerrar Sesión"
+                            ImageUrl="~/App_Themes/IDA/ui/ico-caducado.png" OnClick="imgBtnCerrar_Click" />
+                        
+                    
+                    
+                    <a>
+                        <asp:Label ID="lblAmbiente" runat="server" Font-Size="X-Small"></asp:Label></a>--%>
+                                    <table>
+                                        <tr>
+                                            <td class="auto-style3">Bienvenido 
+                                            </td>
+                                            <td>
+                                                <a>
+                                                    <dx:ASPxButton ID="lblUser" runat="server" Text="" OnClick="lblUser_Click"
+                                                        RenderMode="Link" Style="width: 4px">
+                                                    </dx:ASPxButton>
+                                                </a>
+                                            </td>
+                                            <td class="auto-style4"></td>
+
+                                            <td>
+                                                <asp:ImageButton ID="cmdCerrarS" runat="server" ToolTip="Cerrar Sesión"
+                                                    ImageUrl="~/Images/apagar.png" OnClick="imgBtnCerrar_Click" />
+                                            </td>
+                                            <td>
+
+                                                <a>
+                                                    <asp:Label ID="lblAmbiente" runat="server" Font-Size="X-Small"></asp:Label></a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <asp:ImageButton ID="Contactar" runat="server" ToolTip="Contactar"
+                                                    ImageUrl="~/Images/Contactar.png" Width="125px" OnClick="Contactar_Click" />
+                                            </td>
+                                        </tr>
+                                    </table>
+
+
+                                </div>
+                            </div>
+                            <%--<dx:ASPxHiddenField ID="hdCollection" runat="server" ClientInstanceName="hdCollection"></dx:ASPxHiddenField>--%>
+                            <asp:ScriptManager ID="ScriptManager1" runat="server" EnableScriptGlobalization="True" EnablePageMethods="True" EnableScriptLocalization="true" AsyncPostBackTimeout="2500">
+                                <Scripts>
+                                    <asp:ScriptReference Path="~/Scripts/jquery-1.5.1.min.js" ScriptMode="Auto" />
+                                    <asp:ScriptReference Path="~/Scripts/jquery.gritter.min.js" />
+                                    <asp:ScriptReference Path="~/Scripts/JqueryBlockUi.js" />
+                                    <asp:ScriptReference Path="~/Scripts/chat.js" />
+                                    <asp:ScriptReference Path="~/Scripts/script.js" />
+                                    <asp:ScriptReference Path="~/Scripts/spin.js" />
+                                    <asp:ScriptReference Path="~/Scripts/spin.min.js" />
+                                    <asp:ScriptReference Path="~/Scripts/toolbox.js" />
+                                </Scripts>
+                            </asp:ScriptManager>
+                            <div id="mainNav">
+
+                                <uc1:MenuSMM ID="MenuSMM1" runat="server" />
+
+                            </div>
+                            <div id="interior">
+                                <div id="spin" class="spin"></div>
+                                <div id="overlay"></div>
+                                <div id="waitSpinner"></div>
+                                <asp:ContentPlaceHolder ID="cntMaster" runat="server">
+                                </asp:ContentPlaceHolder>
+                            </div>
+                            <address class="mainAddress">
+                                <strong>Cv Trading</strong>
+                                Camino Valdivia de Paine S/N Km. 3 Buin<br />
+                                Santiago, Chile<br />
+                                Teléfono : +562 783 4000  <a href="http://www.cvtrading.cl">www.CvTrading.cl</a>
+                            </address>
+                        </div>
+                    </dx:PanelContent>
+                </PanelCollection>
+            </dx:ASPxPanel>
+        </form>
+</body>
+</html>

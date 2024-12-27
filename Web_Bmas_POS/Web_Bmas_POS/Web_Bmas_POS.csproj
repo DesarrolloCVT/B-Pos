@@ -1,0 +1,694 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4B72E49A-4E44-488D-8CDF-22512418EA1A}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Web_Bmas_POS</RootNamespace>
+    <AssemblyName>Web_Bmas_POS</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44390</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Charts.v22.1.Core, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeParser.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.DataAccess.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Drawing.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Mvvm.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v22.1.Core, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v22.1.Core, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v22.1.Core, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v22.1.Core, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v22.1.Core, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v22.1.Core, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v22.1.UI, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.ASPxHtmlEditor.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.ASPxPivotGrid.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.ASPxScheduler.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.ASPxThemes.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.Bootstrap.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.Resources.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpo.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v22.1.Web, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGauges.v22.1.Core, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPivotGrid.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v22.1.Web, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v22.1.Web.WebForms, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Administration, Version=7.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Themes\IDA\agenda.css" />
+    <Content Include="App_Themes\IDA\favicon.gif" />
+    <Content Include="App_Themes\IDA\gridviewcss.css" />
+    <Content Include="App_Themes\IDA\head.png" />
+    <Content Include="App_Themes\IDA\innvita-loading.gif" />
+    <Content Include="App_Themes\IDA\jquery.gritter.css" />
+    <Content Include="App_Themes\IDA\popUps.css" />
+    <Content Include="App_Themes\IDA\styles.css" />
+    <Content Include="App_Themes\IDA\ui\bg-accordeon.jpg" />
+    <Content Include="App_Themes\IDA\ui\bg-body-illustration.png" />
+    <Content Include="App_Themes\IDA\ui\bg-body-login-entero.png" />
+    <Content Include="App_Themes\IDA\ui\bg-body-login.png" />
+    <Content Include="App_Themes\IDA\ui\bg-body.jpg" />
+    <Content Include="App_Themes\IDA\ui\bg-body.png" />
+    <Content Include="App_Themes\IDA\ui\bg-header.png" />
+    <Content Include="App_Themes\IDA\ui\bg-lightbox-title.png" />
+    <Content Include="App_Themes\IDA\ui\bg-login-box.jpg" />
+    <Content Include="App_Themes\IDA\ui\bg-tab.png" />
+    <Content Include="App_Themes\IDA\ui\bg-table-th.jpg" />
+    <Content Include="App_Themes\IDA\ui\button-add-blue.png" />
+    <Content Include="App_Themes\IDA\ui\cancel.png" />
+    <Content Include="App_Themes\IDA\ui\filter2hs-blue.png" />
+    <Content Include="App_Themes\IDA\ui\ico-acceso.png" />
+    <Content Include="App_Themes\IDA\ui\ico-agenda-launcher.png" />
+    <Content Include="App_Themes\IDA\ui\ico-agenda.png" />
+    <Content Include="App_Themes\IDA\ui\ico-agregar.png" />
+    <Content Include="App_Themes\IDA\ui\ico-agregar3.png" />
+    <Content Include="App_Themes\IDA\ui\ico-almacenamiento-launcher.png" />
+    <Content Include="App_Themes\IDA\ui\ico-almacenamiento.png" />
+    <Content Include="App_Themes\IDA\ui\ico-arrow.jpg" />
+    <Content Include="App_Themes\IDA\ui\ico-back.png" />
+    <Content Include="App_Themes\IDA\ui\ico-caducado.png" />
+    <Content Include="App_Themes\IDA\ui\ico-calidad.png" />
+    <Content Include="App_Themes\IDA\ui\ico-camiones-launcher.png" />
+    <Content Include="App_Themes\IDA\ui\ico-control-acceso.png" />
+    <Content Include="App_Themes\IDA\ui\ico-control-launcher.png" />
+    <Content Include="App_Themes\IDA\ui\ico-despacho.png" />
+    <Content Include="App_Themes\IDA\ui\ico-edit-camion.png" />
+    <Content Include="App_Themes\IDA\ui\ico-email.png" />
+    <Content Include="App_Themes\IDA\ui\ico-etiquetado.png" />
+    <Content Include="App_Themes\IDA\ui\ico-file-excel-old.png" />
+    <Content Include="App_Themes\IDA\ui\ico-file-excel.png" />
+    <Content Include="App_Themes\IDA\ui\ico-file-excelold.png" />
+    <Content Include="App_Themes\IDA\ui\ico-file-excelold3.png" />
+    <Content Include="App_Themes\IDA\ui\ico-gen-menu%27hover.png" />
+    <Content Include="App_Themes\IDA\ui\ico-gen-menu-active.png" />
+    <Content Include="App_Themes\IDA\ui\ico-gen-menu-hover.png" />
+    <Content Include="App_Themes\IDA\ui\ico-gen-menu.png" />
+    <Content Include="App_Themes\IDA\ui\ico-grilla.png" />
+    <Content Include="App_Themes\IDA\ui\ico-info.png" />
+    <Content Include="App_Themes\IDA\ui\ico-lightbox-cerrar.png" />
+    <Content Include="App_Themes\IDA\ui\ico-mantenedores.png" />
+    <Content Include="App_Themes\IDA\ui\ico-menu.png" />
+    <Content Include="App_Themes\IDA\ui\ico-next-arrow.jpg" />
+    <Content Include="App_Themes\IDA\ui\ico-prev-arrow.jpg" />
+    <Content Include="App_Themes\IDA\ui\ico-print.png" />
+    <Content Include="App_Themes\IDA\ui\ico-recepcion.png" />
+    <Content Include="App_Themes\IDA\ui\ico-refrescar.png" />
+    <Content Include="App_Themes\IDA\ui\ico-usr.png" />
+    <Content Include="App_Themes\IDA\ui\ico-vigente.png" />
+    <Content Include="App_Themes\IDA\ui\logo-grande.png" />
+    <Content Include="App_Themes\IDA\ui\logo.png" />
+    <Content Include="App_Themes\IDA\ui\Logo_login_nuevo.png" />
+    <Content Include="App_Themes\IDA\ui\nav-hover.jpg" />
+    <Content Include="App_Themes\IDA\ui\regular-bullet-over.png" />
+    <Content Include="App_Themes\IDA\ui\regular-bullet.png" />
+    <Content Include="App_Themes\IDA\ui\regular-datecontrol-next.png" />
+    <Content Include="App_Themes\IDA\ui\regular-datecontrol-prev.png" />
+    <Content Include="App_Themes\IDA\ui\regular-separador-bc-last.png" />
+    <Content Include="App_Themes\IDA\ui\regular-separador-bc.png" />
+    <Content Include="App_Themes\IDA\ui\Save.png" />
+    <Content Include="App_Themes\IDA\ui\sprite-banderas.png" />
+    <Content Include="App_Themes\IDA\ui\tab-end.png" />
+    <Content Include="App_Themes\InnvitaSP.png" />
+    <Content Include="Blank.aspx" />
+    <Content Include="ControlesSMM\MenuSMM.ascx" />
+    <Content Include="Css\bootstrap-grid.css" />
+    <Content Include="Css\bootstrap-grid.min.css" />
+    <Content Include="Css\bootstrap-reboot.css" />
+    <Content Include="Css\bootstrap-reboot.min.css" />
+    <Content Include="Css\bootstrap.css" />
+    <Content Include="Css\bootstrap.min.css" />
+    <Content Include="Css\Spin.css" />
+    <Content Include="Images\activo.png" />
+    <Content Include="Images\add.png" />
+    <Content Include="Images\ajax-loader.gif" />
+    <Content Include="Images\apagar.png" />
+    <Content Include="Images\attach.png" />
+    <Content Include="Images\back.png" />
+    <Content Include="Images\bloqueado.png" />
+    <Content Include="Images\box.png" />
+    <Content Include="Images\boxadd.png" />
+    <Content Include="Images\boxadddis.png" />
+    <Content Include="Images\boxdis.png" />
+    <Content Include="Images\boxexclamation.png" />
+    <Content Include="Images\boxexclamationdis.png" />
+    <Content Include="Images\boxok.png" />
+    <Content Include="Images\boxokdis.png" />
+    <Content Include="Images\business.png" />
+    <Content Include="Images\capturas.png" />
+    <Content Include="Images\cerrar.png" />
+    <Content Include="Images\change.png" />
+    <Content Include="Images\check-box.png" />
+    <Content Include="Images\checklist.png" />
+    <Content Include="Images\clearFilter.png" />
+    <Content Include="Images\clientes.png" />
+    <Content Include="Images\clientsupervisores.png" />
+    <Content Include="Images\confirm.png" />
+    <Content Include="Images\confirmar.png" />
+    <Content Include="Images\Contactar.png" />
+    <Content Include="Images\contactos.png" />
+    <Content Include="Images\contrato.png" />
+    <Content Include="Images\database_add.png" />
+    <Content Include="Images\database_add_dis.png" />
+    <Content Include="Images\delete.png" />
+    <Content Include="Images\delete2.png" />
+    <Content Include="Images\descargar.png" />
+    <Content Include="Images\descuento.png" />
+    <Content Include="Images\disk.png" />
+    <Content Include="Images\disk_multiple.png" />
+    <Content Include="Images\documento.png" />
+    <Content Include="Images\documentoPDF.png" />
+    <Content Include="Images\documentpdf.png" />
+    <Content Include="Images\drive_web.png" />
+    <Content Include="Images\edit-add.png" />
+    <Content Include="Images\edit-add2.png" />
+    <Content Include="Images\edita.gif" />
+    <Content Include="Images\edita.png" />
+    <Content Include="Images\editadis.png" />
+    <Content Include="Images\editar.png" />
+    <Content Include="Images\elimina.gif" />
+    <Content Include="Images\eliminar.png" />
+    <Content Include="Images\email.png" />
+    <Content Include="Images\emailenviado.png" />
+    <Content Include="Images\Empty.png" />
+    <Content Include="Images\encuesta.png" />
+    <Content Include="Images\engranaje.png" />
+    <Content Include="Images\error.png" />
+    <Content Include="Images\excel.png" />
+    <Content Include="Images\exel.png" />
+    <Content Include="Images\fileup.png" />
+    <Content Include="Images\forward.png" />
+    <Content Include="Images\gritter-azul.png" />
+    <Content Include="Images\gritter-azul1.png" />
+    <Content Include="Images\gritter-close-ie6.gif" />
+    <Content Include="Images\gritter-close-sap.gif" />
+    <Content Include="Images\gritter-long.png" />
+    <Content Include="Images\gritter.png" />
+    <Content Include="Images\grittersap.png" />
+    <Content Include="Images\head.png" />
+    <Content Include="Images\historial-de-trabajo.png" />
+    <Content Include="Images\ico-vigente.png" />
+    <Content Include="Images\id_card.png" />
+    <Content Include="Images\ie-spacer.gif" />
+    <Content Include="Images\inactivo.png" />
+    <Content Include="Images\insurance.png" />
+    <Content Include="Images\inventory.png" />
+    <Content Include="Images\kpi.png" />
+    <Content Include="Images\Left-right.png" />
+    <Content Include="Images\limpiar.png" />
+    <Content Include="Images\LOGOTIPO B MAS_png.png" />
+    <Content Include="Images\logout.gif" />
+    <Content Include="Images\loupe.png" />
+    <Content Include="Images\mail-send.png" />
+    <Content Include="Images\mantenimiento.png" />
+    <Content Include="Images\menu.png" />
+    <Content Include="Images\mix.png" />
+    <Content Include="Images\mono.png" />
+    <Content Include="Images\node_delete.png" />
+    <Content Include="Images\node_edit.png" />
+    <Content Include="Images\node_insert.png" />
+    <Content Include="Images\nuevo.png" />
+    <Content Include="Images\nuevo1.png" />
+    <Content Include="Images\operacional .png" />
+    <Content Include="Images\outlook.png" />
+    <Content Include="Images\packagewarning.png" />
+    <Content Include="Images\padlock.png" />
+    <Content Include="Images\padlock_dis.png" />
+    <Content Include="Images\parametros.png" />
+    <Content Include="Images\pdf.png" />
+    <Content Include="Images\pdf_disable.png" />
+    <Content Include="Images\photography.png" />
+    <Content Include="Images\picking.png" />
+    <Content Include="Images\pn-add-source-copy.gif" />
+    <Content Include="Images\portapapeles.png" />
+    <Content Include="Images\porteria.png" />
+    <Content Include="Images\printing.png" />
+    <Content Include="Images\producto.png" />
+    <Content Include="Images\q_disabled.png" />
+    <Content Include="Images\reception.png" />
+    <Content Include="Images\receptiondis.png" />
+    <Content Include="Images\refresh.gif" />
+    <Content Include="Images\reloj-de-pared.png" />
+    <Content Include="Images\reloj.png" />
+    <Content Include="Images\reportes.png" />
+    <Content Include="Images\search.png" />
+    <Content Include="Images\semaforoa.png" />
+    <Content Include="Images\semaforor.png" />
+    <Content Include="Images\semaforov.png" />
+    <Content Include="Images\sucursales.png" />
+    <Content Include="Images\temperatura.png" />
+    <Content Include="Images\treeview_add.gif" />
+    <Content Include="Images\treeview_delete.gif" />
+    <Content Include="Images\treeview_edit.gif" />
+    <Content Include="Images\truck.png" />
+    <Content Include="Images\user_avatar.gif" />
+    <Content Include="Images\ver.png" />
+    <Content Include="Images\verAD.png" />
+    <Content Include="Images\warning.png" />
+    <Content Include="Images\web-maintenance.jpg" />
+    <Content Include="Images\word.png" />
+    <Content Include="Login.aspx" />
+    <Content Include="MayoristaOP\SMMAjusteDocumentoElec.aspx" />
+    <Content Include="MayoristaProduccion\HistorialArqueoCaja.aspx" />
+    <Content Include="MayoristaProduccion\Report.aspx" />
+    <Content Include="MayoristaProduccion\SMMAperturaCaja.aspx" />
+    <Content Include="MayoristaProduccion\SMMArqueoCaja.aspx" />
+    <Content Include="MayoristaProduccion\SMMCaja.aspx" />
+    <Content Include="MayoristaProduccion\SMMConsultaPrecio.aspx" />
+    <Content Include="MayoristaProduccion\SMMCreaCliente.aspx" />
+    <Content Include="MayoristaProduccion\SMMCreaClienteFac.aspx" />
+    <Content Include="MayoristaProduccion\SMMFlujoCaja.aspx" />
+    <Content Include="MayoristaProduccion\SMMNotaCredito.aspx" />
+    <Content Include="MayoristaProduccion\SMMPreventasAbiertas.aspx" />
+    <Content Include="MayoristaProduccion\SMMVenta.aspx" />
+    <Content Include="MayoristaProduccion\SMMVentaEmpRelacionada.aspx" />
+    <Content Include="MayoristaReportes\AjustesEnCaja.aspx" />
+    <Content Include="MayoristaReportes\InfArqueoCaja.aspx" />
+    <Content Include="MenuImg\accesscontrol.png" />
+    <Content Include="MenuImg\activity.gif" />
+    <Content Include="MenuImg\attach.png" />
+    <Content Include="MenuImg\business.png" />
+    <Content Include="MenuImg\capturas.png" />
+    <Content Include="MenuImg\category.png" />
+    <Content Include="MenuImg\cerrar.png" />
+    <Content Include="MenuImg\check-box.png" />
+    <Content Include="MenuImg\clientes.png" />
+    <Content Include="MenuImg\clientsupervisores.png" />
+    <Content Include="MenuImg\Cone.png" />
+    <Content Include="MenuImg\confirmar.png" />
+    <Content Include="MenuImg\contactos.png" />
+    <Content Include="MenuImg\contract.png" />
+    <Content Include="MenuImg\contrato.png" />
+    <Content Include="MenuImg\ControlAcceso.png" />
+    <Content Include="MenuImg\delete.png" />
+    <Content Include="MenuImg\disk.png" />
+    <Content Include="MenuImg\disk_multiple.png" />
+    <Content Include="MenuImg\doctype.png" />
+    <Content Include="MenuImg\driver.png" />
+    <Content Include="MenuImg\drive_web.png" />
+    <Content Include="MenuImg\editar.png" />
+    <Content Include="MenuImg\eliminar.png" />
+    <Content Include="MenuImg\email.png" />
+    <Content Include="MenuImg\emailenviado.png" />
+    <Content Include="MenuImg\Empty.png" />
+    <Content Include="MenuImg\entidad.png" />
+    <Content Include="MenuImg\excel.png" />
+    <Content Include="MenuImg\exel.png" />
+    <Content Include="MenuImg\family.png" />
+    <Content Include="MenuImg\gear.png" />
+    <Content Include="MenuImg\kpi.png" />
+    <Content Include="MenuImg\layout2.png" />
+    <Content Include="MenuImg\maestroProd.png" />
+    <Content Include="MenuImg\money.png" />
+    <Content Include="MenuImg\nuevo.png" />
+    <Content Include="MenuImg\object.png" />
+    <Content Include="MenuImg\operacional .png" />
+    <Content Include="MenuImg\operacional.png" />
+    <Content Include="MenuImg\package.png" />
+    <Content Include="MenuImg\package_share.png" />
+    <Content Include="MenuImg\parameters_sys.png" />
+    <Content Include="MenuImg\parametros.png" />
+    <Content Include="MenuImg\pdf.png" />
+    <Content Include="MenuImg\picking.png" />
+    <Content Include="MenuImg\pnc.png" />
+    <Content Include="MenuImg\porteria.png" />
+    <Content Include="MenuImg\position.png" />
+    <Content Include="MenuImg\pp.png" />
+    <Content Include="MenuImg\producto.png" />
+    <Content Include="MenuImg\rack.png" />
+    <Content Include="MenuImg\reportes.png" />
+    <Content Include="MenuImg\ResourcesImg.jpg" />
+    <Content Include="MenuImg\ResourcesImg.png" />
+    <Content Include="MenuImg\semaforoa.png" />
+    <Content Include="MenuImg\semaforor.png" />
+    <Content Include="MenuImg\semaforov.png" />
+    <Content Include="MenuImg\site.png" />
+    <Content Include="MenuImg\siteold.png" />
+    <Content Include="MenuImg\Soportante.jpg" />
+    <Content Include="MenuImg\sucursales.png" />
+    <Content Include="MenuImg\supportive.png" />
+    <Content Include="MenuImg\temperatura.png" />
+    <Content Include="MenuImg\tipo-proveedor.png" />
+    <Content Include="MenuImg\TipoArticulo.png" />
+    <Content Include="MenuImg\traffic-light.png" />
+    <Content Include="MenuImg\truck.png" />
+    <Content Include="MenuImg\unit.png" />
+    <Content Include="MenuImg\ver.png" />
+    <Content Include="MenuImg\warning.png" />
+    <Content Include="MenuImg\word.png" />
+    <Content Include="MenuImg\world.png" />
+    <Content Include="ReiniciaPooll.aspx" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\chat.js" />
+    <Content Include="Scripts\jquery-1.5.1.min.js" />
+    <Content Include="Scripts\jquery-1.5.min.js" />
+    <Content Include="Scripts\jquery.gritter.js" />
+    <Content Include="Scripts\jquery.gritter.min.js" />
+    <Content Include="Scripts\jquery.js" />
+    <Content Include="Scripts\JqueryBlockUi.js" />
+    <Content Include="Scripts\script.js" />
+    <Content Include="Scripts\spin.js" />
+    <Content Include="Scripts\spin.min.js" />
+    <Content Include="Scripts\toolbox.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Blank.aspx.cs">
+      <DependentUpon>Blank.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Blank.aspx.designer.cs">
+      <DependentUpon>Blank.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ControlesSMM\MenuSMM.ascx.cs">
+      <DependentUpon>MenuSMM.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ControlesSMM\MenuSMM.ascx.designer.cs">
+      <DependentUpon>MenuSMM.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPage.Master.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPage.Master.designer.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MayoristaOP\SMMAjusteDocumentoElec.aspx.cs">
+      <DependentUpon>SMMAjusteDocumentoElec.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MayoristaOP\SMMAjusteDocumentoElec.aspx.designer.cs">
+      <DependentUpon>SMMAjusteDocumentoElec.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MayoristaProduccion\HistorialArqueoCaja.aspx.cs">
+      <DependentUpon>HistorialArqueoCaja.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MayoristaProduccion\HistorialArqueoCaja.aspx.designer.cs">
+      <DependentUpon>HistorialArqueoCaja.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MayoristaProduccion\Report.aspx.cs">
+      <DependentUpon>Report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MayoristaProduccion\Report.aspx.designer.cs">
+      <DependentUpon>Report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MayoristaProduccion\SMMAperturaCaja.aspx.cs">
+      <DependentUpon>SMMAperturaCaja.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MayoristaProduccion\SMMAperturaCaja.aspx.designer.cs">
+      <DependentUpon>SMMAperturaCaja.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MayoristaProduccion\SMMArqueoCaja.aspx.cs">
+      <DependentUpon>SMMArqueoCaja.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MayoristaProduccion\SMMArqueoCaja.aspx.designer.cs">
+      <DependentUpon>SMMArqueoCaja.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MayoristaProduccion\SMMCaja.aspx.cs">
+      <DependentUpon>SMMCaja.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MayoristaProduccion\SMMCaja.aspx.designer.cs">
+      <DependentUpon>SMMCaja.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MayoristaProduccion\SMMConsultaPrecio.aspx.cs">
+      <DependentUpon>SMMConsultaPrecio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MayoristaProduccion\SMMConsultaPrecio.aspx.designer.cs">
+      <DependentUpon>SMMConsultaPrecio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MayoristaProduccion\SMMCreaCliente.aspx.cs">
+      <DependentUpon>SMMCreaCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MayoristaProduccion\SMMCreaCliente.aspx.designer.cs">
+      <DependentUpon>SMMCreaCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MayoristaProduccion\SMMCreaClienteFac.aspx.cs">
+      <DependentUpon>SMMCreaClienteFac.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MayoristaProduccion\SMMCreaClienteFac.aspx.designer.cs">
+      <DependentUpon>SMMCreaClienteFac.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MayoristaProduccion\SMMFlujoCaja.aspx.cs">
+      <DependentUpon>SMMFlujoCaja.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MayoristaProduccion\SMMFlujoCaja.aspx.designer.cs">
+      <DependentUpon>SMMFlujoCaja.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MayoristaProduccion\SMMNotaCredito.aspx.cs">
+      <DependentUpon>SMMNotaCredito.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MayoristaProduccion\SMMNotaCredito.aspx.designer.cs">
+      <DependentUpon>SMMNotaCredito.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MayoristaProduccion\SMMPreventasAbiertas.aspx.cs">
+      <DependentUpon>SMMPreventasAbiertas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MayoristaProduccion\SMMPreventasAbiertas.aspx.designer.cs">
+      <DependentUpon>SMMPreventasAbiertas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MayoristaProduccion\SMMVenta.aspx.cs">
+      <DependentUpon>SMMVenta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MayoristaProduccion\SMMVenta.aspx.designer.cs">
+      <DependentUpon>SMMVenta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MayoristaProduccion\SMMVentaEmpRelacionada.aspx.cs">
+      <DependentUpon>SMMVentaEmpRelacionada.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MayoristaProduccion\SMMVentaEmpRelacionada.aspx.designer.cs">
+      <DependentUpon>SMMVentaEmpRelacionada.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MayoristaProduccion\TickDescuento.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MayoristaProduccion\TickDescuento.Designer.cs">
+      <DependentUpon>TickDescuento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MayoristaProduccion\TicketPromo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MayoristaProduccion\TicketPromo.Designer.cs">
+      <DependentUpon>TicketPromo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MayoristaProduccion\TickPreventa.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MayoristaProduccion\TickPreventa.Designer.cs">
+      <DependentUpon>TickPreventa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MayoristaReportes\AjustesEnCaja.aspx.cs">
+      <DependentUpon>AjustesEnCaja.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MayoristaReportes\AjustesEnCaja.aspx.designer.cs">
+      <DependentUpon>AjustesEnCaja.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MayoristaReportes\InfArqueoCaja.aspx.cs">
+      <DependentUpon>InfArqueoCaja.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MayoristaReportes\InfArqueoCaja.aspx.designer.cs">
+      <DependentUpon>InfArqueoCaja.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReiniciaPooll.aspx.cs">
+      <DependentUpon>ReiniciaPooll.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReiniciaPooll.aspx.designer.cs">
+      <DependentUpon>ReiniciaPooll.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SMM_FlujoCaja.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SMM_FlujoCaja.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Css\bootstrap-grid.css.map" />
+    <Content Include="Css\bootstrap-grid.min.css.map" />
+    <Content Include="Css\bootstrap-reboot.css.map" />
+    <Content Include="Css\bootstrap-reboot.min.css.map" />
+    <Content Include="Css\bootstrap.css.map" />
+    <Content Include="Css\bootstrap.min.css.map" />
+    <Content Include="MasterPage.Master" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DB_Bmas\DB_Bmas.csproj">
+      <Project>{0a1c5cb6-1931-44fd-8d41-ef3d40595e3b}</Project>
+      <Name>DB_Bmas</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MayoristaProduccion\TickDescuento.resx">
+      <DependentUpon>TickDescuento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MayoristaProduccion\TicketPromo.resx">
+      <DependentUpon>TicketPromo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MayoristaProduccion\TickPreventa.resx">
+      <DependentUpon>TickPreventa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="SMM_FlujoCaja.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SMM_FlujoCaja.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="SAPbobsCOM">
+      <Guid>{FC8030BE-F5D2-4B8E-8F92-44228FE30100}</Guid>
+      <VersionMajor>10</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>61585</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44390/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

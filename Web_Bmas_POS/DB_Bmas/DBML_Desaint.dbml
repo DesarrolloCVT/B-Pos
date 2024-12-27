@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="CVT_DESAINT" Class="DBML_DesaintDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=roble;Initial Catalog=CVT_DESAINT;Persist Security Info=True;User ID=sa;Connect Timeout=3600" SettingsObjectName="DB_Bmas.Properties.Settings" SettingsPropertyName="CVT_DESAINTConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.CVT_Usuarios" Member="CVT_Usuarios">
+    <Type Name="CVT_Usuarios">
+      <Column Name="IdUsuario" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UsuarioSistema" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Clave" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="NombreUsuario" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Id_Area" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Depto" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="FechaRegistro" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FechaUpdate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="IdPerfil" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MailUsuario" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ClaveEncriptada" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Verificador" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="RutaFirma" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="RutaFoto" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="RestriccionBodega" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IdPerfilMovile" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TelefonoContacto" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_SubMenu" Member="CVT_SubMenu">
+    <Type Name="CVT_SubMenu">
+      <Column Name="IdSubMenu" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdMenu" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre_SubMenu" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="URL_SubMenu" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Association Name="CVT_SubMenu_CVT_PrivilegioPerfil" Member="CVT_PrivilegioPerfil" ThisKey="IdSubMenu" OtherKey="IdSubMenu" Type="CVT_PrivilegioPerfil" />
+      <Association Name="CVT_Menu_CVT_SubMenu" Member="CVT_Menu" ThisKey="IdMenu" OtherKey="IdMenu" Type="CVT_Menu" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_Menu" Member="CVT_Menu">
+    <Type Name="CVT_Menu">
+      <Column Name="IdMenu" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre_Menu" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Association Name="CVT_Menu_CVT_SubMenu" Member="CVT_SubMenu" ThisKey="IdMenu" OtherKey="IdMenu" Type="CVT_SubMenu" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_PrivilegioPerfil" Member="CVT_PrivilegioPerfil">
+    <Type Name="CVT_PrivilegioPerfil">
+      <Column Name="IdPerfil" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdSubMenu" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Permiso" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="CVT_SubMenu_CVT_PrivilegioPerfil" Member="CVT_SubMenu" ThisKey="IdSubMenu" OtherKey="IdSubMenu" Type="CVT_SubMenu" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
